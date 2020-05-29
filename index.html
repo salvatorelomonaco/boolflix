@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:url" content="https://salvatorelomonaco.github.io/ajax-ex-boolflix/">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        
+        <link rel="stylesheet" href="style.css">
+        <title>Boolflix</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <img src="https://fontmeme.com/permalink/191216/c2afbefb193becb208cc4f7dcf0a14da.png" alt="Boolflix">
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Serie TV</li>
+                        <li>Film</li>
+                        <li>Originali</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <input type="text" class="search" name="" value="">
+                <button type="button" name="button">Cerca</button>
+                <select class="lingua">
+                    <option value="it-IT">IT</option>
+                    <option value="en-EN">EN</option>
+                    <option value="es-ES">ES</option>
+                    <option value="fr-Fr">FR</option>
+                    <option value="de-DE">DE</option>
+                </select>
+            </div>
+        </header>
+        <div class="layout">
+            <img src="https://fontmeme.com/permalink/191218/64f8b8273ff2a8d6ef4cb5673c746a6d.png" alt="">
+            <h1>Guarda i tuoi film e serie TV preferite!</h1>
+        </div>
+        <main>
+            <select id="genere">
+                <option value="">Seleziona genere</option>
+                <option value="action">Action & Adventure</option>
+                <option value="family">Family</option>
+                <option value="crime">Crime</option>
+                <option value="drama">Drama</option>
+                <option value="animation">Animation</option>
+                <option value="horror">Horror</option>
+                <option value="documentary">Documentary</option>
+                <option value="comedy">Comedy</option>
+            </select>
+            <p></p>
+            <p class="category">SerieTv</p>
+            <div class="serieTv-container">
+            </div>
+            <p class="category">Film</p>
+            <div class="film-container">
+            </div>
+        </main>
+        <!-- Handlebars template -->
+        <script id="template" type="text/x-handlebars-template">
+            <div class="film" data-id={{id}} data-genere={{genre}}>
+                <div class="poster">
+                    <img src="{{ poster }}" alt"poster img">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <span>Titolo:</span> {{ title }}
+                    </div>
+                    <div class="original-title">
+                        <span>Titolo originale:</span> {{ original-title }}
+                    </div>
+                    <div class="lang">
+                        <span>Lingua:</span> {{{ language }}}
+                    </div>
+                    <div class="rating">
+                        <span>Voto:</span> {{{ vote }}}
+                    </div>
+                    <div class="genre">
+                        <span>Genere:</span> {{ genre }}
+                    </div>
+                    <div class="description">
+                        <span>Overview:</span> {{ overview }}
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
